@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPass - Feel Good</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#059669',
+                        accent: '#34D399',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling for the entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Optimize animations for better performance */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Ensure sections have proper spacing and don't cause layout shifts */
+        section {
+            will-change: auto;
+            contain: layout style paint;
+        }
+        
+        /* Smooth transitions for interactive elements */
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        /* Prevent layout shifts during animations */
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        /* Optimize grid animations */
+        .grid > div {
+            will-change: transform;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img src="logo.jpeg" alt="Green Light Logo" class="h-20 w-auto">
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <!-- <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div> -->
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <!-- <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#" class="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#" class="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div> -->
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Green Light Center
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-green-100 max-w-3xl mx-auto">
+                    Монгол Улсад хүүхдийн зам тээврийн ослоос урьдчилан сэргийлэх, аюулгүй байдлыг хангах чиглэлээр олон нийтийн боловсрол, сургалт, бодлогын дэмжлэг үзүүлэх замаар хүүхдэд ээлтэй, аюулгүй орчныг бүрдүүлэх.
+                </p>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- Parent Concerns Section -->
+   
+
+    <!-- Company Goals Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h4 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Монгол Улсад хүүхдийн зам тээврийн осол, эрсдэлийг бууруулахад чиглэсэн бодит, тогтвортой шийдлүүдийг нэвтрүүлж, хүүхэд бүрийг аюулгүй орчинд өсч торних нөхцлөөр хангахын төлөө дараах зорилгыг дэвшүүлдэг. Үүнд
+                </h4>
+            
+            </div>
+            
+            <!-- Goals Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Goal 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        Хүүхдийн замын хөдөлгөөний аюулгүй байдлыг сайжруулах
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Сургалт, сурталчилгаа, олон нийтэд чиглэсэн боловсролын үйл ажиллагаа явуулж, хүүхдүүд болон эцэг эх, багш, жолооч нарт замын хөдөлгөөний зөв дадлыг төлөвшүүлэх.
+                    </p>
+                </div>
+                
+                <!-- Goal 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        Осол бууруулах дэвшилтэт туршлагыг нутагшуулах
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Солонгос зэрэг улс орны амжилттай туршлагыг судалж, Монголын нөхцөлд нийцүүлэн нэвтрүүлэх.
+                    </p>
+                </div>
+                
+                <!-- Goal 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-balance-scale text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        Бодлого, хууль тогтоомжид нөлөөлөх
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Хүүхдийн замын аюулгүй байдлыг хамгаалсан хууль, дүрэм, стандартуудыг боловсронгуй болгоход дэмжлэг үзүүлэх.
+                    </p>
+                </div>
+                
+                <!-- Goal 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hands-helping text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        Орон нутгийн хамтын ажиллагааг дэмжих
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Аймаг, сумын түвшинд "Аюулгүй зам – Эрүүл хүүхэд" санаачилга, хөтөлбөрийг хэрэгжүүлэх.
+                    </p>
+                </div>
+                
+                <!-- Goal 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        Олон улсын түншлэл, хамтын ажиллагааг өргөжүүлэх
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Хүүхдийн эрхийг хамгаалах чиглэлээр ажилладаг олон улсын байгууллага, ТББ-уудтай түншлэл тогтоож, төсөл хөтөлбөрүүд хэрэгжүүлэх.
+                    </p>
+                </div>
+                
+            
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Detailed Objectives Section -->
+    <section class="bg-gradient-to-br from-green-50 to-emerald-50 py-20 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-green-200 rounded-full opacity-20 transform translate-x-32 -translate-y-32"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-200 rounded-full opacity-20 transform -translate-x-48 translate-y-48"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mb-6">
+                    <i class="fas fa-tasks text-white text-2xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Бидний зорилтууд
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Хүүхдийн аюулгүй байдлыг хамгаалах ажлын тодорхой, хэрэгжүүлэх боломжтой зорилтууд
+                </p>
+            </div>
+            
+            <!-- Objectives Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Objective 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">1</span>
+                                </div>
+                                <h3 class="text-xl font-semibold">Хүүхдэд зориулсан боловсрол</h3>
+                            </div>
+                            <i class="fas fa-graduation-cap text-2xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Цэцэрлэг, ерөнхий боловсролын сургуулиудад хүүхдэд ойлгомжтой, нас насанд нь тохирсон замын хөдөлгөөний аюулгүй байдлын сургалт зохион байгуулах</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Хичээлийн хэрэглэгдэхүүн, сургалтын хөтөлбөр, үзүүлэн материалууд боловсруулах, түгээх</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Objective 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">2</span>
+                                </div>
+                                <h3 class="text-xl font-semibold">Аюулгүй орчныг бүрдүүлэх</h3>
+                            </div>
+                            <i class="fas fa-shield-alt text-2xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Сургуулийн орчин болон хүүхэд зорчиж буй бүсэд "Сургуулийн бүс" тэмдэг, дохио, хурд сааруулагч, гэрэлтүүлэг зэрэг аюулгүй байдлын дэд бүтэц, шийдлүүдийг хэрэгжүүлэхэд дэмжлэг үзүүлэх</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Аюултай бүсүүдэд судалгаа хийж, сайжруулах санал, шийдлийг холбогдох байгууллагад хүргүүлэх</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Objective 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">3</span>
+                                </div>
+                                <h3 class="text-xl font-semibold">Мэдээлэл, сурталчилгаа</h3>
+                            </div>
+                            <i class="fas fa-bullhorn text-2xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Хүүхдийн замын аюулгүй байдалтай холбоотой нөлөөллийн аян, олон нийтийн хэлэлцүүлэг, сургалт, мэдээ мэдээлэл түгээх</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Жолооч нарын хариуцлагыг нэмэгдүүлэх чиглэлээр ухуулга сурталчилгаа хийх</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Objective 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">4</span>
+                                </div>
+                                <h3 class="text-xl font-semibold">Орон нутгийн хамтын ажиллагаа</h3>
+                            </div>
+                            <i class="fas fa-hands-helping text-2xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Аймаг, сумдын төрийн болон төрийн бус байгууллага, сургуулиудтай хамтран аюулгүй байдлын хөтөлбөрүүдийг хэрэгжүүлэх</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Сайн туршлагуудыг бусад бүс нутагт түгээн дэлгэрүүлэх</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Objective 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-gradient-to-r from-red-500 to-red-600 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">5</span>
+                                </div>
+                                <h3 class="text-xl font-semibold">Олон улсын хамтын ажиллагаа</h3>
+                            </div>
+                            <i class="fas fa-globe text-2xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Солонгос зэрэг улс орнуудын амжилттай туршлагыг судалж, нутагшуулах</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Олон улсын төсөл, хөтөлбөрт хамрагдах, хамтран хэрэгжүүлэх</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Objective 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-bold">6</span>
+                                </div>
+                                <h3 class="text-xl font-semibold">Бодлого боловсруулах</h3>
+                            </div>
+                            <i class="fas fa-balance-scale text-2xl opacity-80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Хүүхдийн замын аюулгүй байдлыг хамгаалах бодлого, хууль тогтоомжид санал, судалгаа, дүгнэлт хүргүүлэх</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <span class="text-sm">Судалгаанд суурилсан зөвлөмж боловсруулан холбогдох төрийн байгууллагад танилцуулах</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+         
+        </div>
+    </section>
+
+
+
+    <!-- Vision Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-20 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 transform -translate-x-32 -translate-y-32"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200 rounded-full opacity-20 transform translate-x-48 translate-y-48"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full mb-6">
+                    <i class="fas fa-eye text-white text-2xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Хэтийн төлөв
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Монгол Улсад хүүхэд бүр замын хөдөлгөөнд аюулгүй, итгэлтэй, эрх тэгш оролцох боломжтой орчинг бүрдүүлж, зам тээврийн осолгүй ирээдүйг хамтдаа бүтээх.
+                </p>
+            </div>
+            
+            <!-- Vision Goals Timeline Style -->
+            <div class="space-y-8 md:space-y-12">
+                <!-- Vision 1 -->
+                <div class="flex flex-col lg:flex-row items-center gap-6 md:gap-8">
+                    <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                        <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-blue-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 md:w-10 md:h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm md:text-base">1</span>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900">
+                                    Үндэсний ТББ болж төлөвших
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                                Хүүхдийн амь нас, эрүүл мэндийг хамгаалсан үндэсний хэмжээнд хэрэгжих бодлогын шийдэл бүхий ТББ болж төлөвших
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                        <div class="w-full h-32 md:h-48 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-building text-white text-4xl md:text-6xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision 2 -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8">
+                    <div class="w-full lg:w-1/2">
+                        <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-green-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 md:w-10 md:h-10 bg-green-500 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm md:text-base">2</span>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900">
+                                    Боловсролын тогтолцоог бий болгох
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                                Бүх аймаг, сумдад салбар бүхий хүүхдийн замын аюулгүй байдлын боловсролын тогтолцоог бий болгох
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <div class="w-full h-32 md:h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-xl md:rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-4xl md:text-6xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision 3 -->
+                <div class="flex flex-col lg:flex-row items-center gap-6 md:gap-8">
+                    <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                        <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-purple-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 md:w-10 md:h-10 bg-purple-500 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm md:text-base">3</span>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900">
+                                    Хууль, дүрэмд гол үүрэг гүйцэтгэх
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                                Монгол Улсын хууль, дүрэмд хүүхдийг хамгаалсан заалт, стандартуудыг тусгуулахад гол үүрэг гүйцэтгэх
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                        <div class="w-full h-32 md:h-48 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl md:rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-balance-scale text-white text-4xl md:text-6xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision 4 -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-6 md:gap-8">
+                    <div class="w-full lg:w-1/2">
+                        <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-orange-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm md:text-base">4</span>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900">
+                                    Ази тивийн жишиг төв болох
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                                Ази тивийн жишиг хүүхдийн замын хөдөлгөөний боловсролын төв болон өргөжих
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <div class="w-full h-32 md:h-48 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl md:rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-globe-asia text-white text-4xl md:text-6xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision 5 -->
+                <div class="flex flex-col lg:flex-row items-center gap-6 md:gap-8">
+                    <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                        <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border-l-4 border-red-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 md:w-10 md:h-10 bg-red-500 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                                    <span class="text-white font-bold text-sm md:text-base">5</span>
+                                </div>
+                                <h3 class="text-lg md:text-xl font-semibold text-gray-900">
+                                    Олон улсын хамтын ажиллагаа
+                                </h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                                Олон улсын байгууллага түншүүдтэй тогтвортой хамтын ажиллагааг хөгжүүлэх замаар төсөл хөтөлбөрүүдийг улс даяар хэрэгжүүлэх
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                        <div class="w-full h-32 md:h-48 bg-gradient-to-br from-red-400 to-red-600 rounded-xl md:rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-handshake text-white text-4xl md:text-6xl opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision Summary -->
+            <div class="text-center mt-12 md:mt-16">
+                <div class="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                        <i class="fas fa-star text-white text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">
+                        Ирээдүйн харагдаж буй зорилго
+                    </h3>
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Бид Монгол Улсын хүүхдийн аюулгүй байдлыг хамгаалах ажилд тэргүүлэгч байгууллага болж, 
+                        олон улсын түвшинд хүлээн зөвшөөрөгдсөн стандартуудыг тогтоох зорилготой.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Expected Results Section -->
+    <section class="bg-gradient-to-br from-purple-50 to-pink-50 py-20 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 transform -translate-x-32 -translate-y-32"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-pink-200 rounded-full opacity-20 transform translate-x-48 translate-y-48"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mb-6">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    "Грийн Лайт" ТББ-ын үйл ажиллагааны хүлээгдэж буй ҮР ДҮН
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Хүүхдийн аюулгүй байдлыг хамгаалах ажлын бодит, хэмжих боломжтой үр дүнгүүд
+                </p>
+            </div>
+            
+            <!-- Results Grid -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Result 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-red-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🎯</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">1. Хүүхдийн зам тээврийн ослын тоо бодитоор буурна</h3>
+                            </div>
+                        </div>
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Сургуулийн бүс, тогтмол зорчих замууд дахь ослын эрсдэл буурч, хүүхдийн амь нас, эрүүл мэнд хамгаалагдана.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-blue-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">📚</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">2. Хүүхдүүд замын хөдөлгөөний аюулгүй байдалд мэдлэгтэй, ухамсартай оролцогч болно</h3>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Сургалт, хөтөлбөрүүдийн үр дүнд хүүхдүүдийн замын дүрэм, анхаарах зүйлсийн талаарх ойлголт нэмэгдэж, зөв дадал хэвшил төлөвшинө.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-green-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🧩</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">3. Эцэг эх, багш, жолооч нарын хандлага, хариуцлага дээшилнэ</h3>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Нийгмийн бүх оролцогч талууд хүүхдийн аюулгүй байдлыг дэмжих ухамсартай, анхааралтай ханддаг болно.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-orange-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🛣️</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">4. Хүүхдэд ээлтэй аюулгүй орчинтой зам, сургууль орчмын дэд бүтэц сайжирна</h3>
+                            </div>
+                        </div>
+                        <div class="bg-orange-50 rounded-lg p-4">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                "Сургуулийн бүс", хурд сааруулагч, дохиолол, гэрэлтүүлэг зэрэг аюулгүй байдлыг хангах орчны шийдлүүд бодитоор нэмэгдэнэ.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-purple-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">📊</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">5. Бодлого боловсруулагчдын анхаарал нэмэгдэж, хууль дүрэм сайжирна</h3>
+                            </div>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Судалгаа, зөвлөмж, хамтын хэлэлцүүлгээр дамжуулан төр, орон нутгийн бодлого боловсруулалт хүүхдийн аюулгүй байдалд чиглэсэн болно.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-indigo-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🌍</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">6. Олон улсын хамтын ажиллагаа, туршлагын солилцоо идэвхжинэ</h3>
+                            </div>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg p-4">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Солонгос зэрэг улс орнуудын шилдэг жишээг нутагшуулах, хамтран төсөл хэрэгжүүлэх боломж нэмэгдэнэ.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+    </section>
+
+
+    <!-- Hero Section 2 -->
+    <section class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Text Content -->
+                <div class="relative">
+                    <!-- Purple L-shaped brackets -->
+                    <div class="absolute top-0 left-0 w-8 h-8 border-l-4 border-t-4 border-purple-600"></div>
+                    <div class="absolute bottom-0 right-0 w-8 h-8 border-r-4 border-b-4 border-purple-600"></div>
+                    
+                    <!-- Text content with padding to avoid brackets -->
+                    <div class="pl-12 pr-12 pt-8 pb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Компанийн түүх</h3>
+                        
+                        <!-- Preview Text (shown by default) -->
+                        <div id="history-preview" class="text-gray-800 leading-relaxed">
+                            <p class="text-lg mb-4">
+                                1990 онд 1,537 байсан хүүхдийн зам тээврийн ослын нас баралтын тоог 2024 онд 12 болгож бууруулсан БНСУ-ын хүүхдийн зам тээврийн ослыг бууруулах арга туршлагыг Монгол Улсад идэвхтэй нэвтрүүлэх болно...
+                            </p>
+                            <p class="text-lg mb-4">
+                                "Грийн Лайт" ТББ-ын тэргүүн Амурутүвшин нь цагдаагийн байгууллагад ажиллаж байсан туршлагатай бөгөөд 10 жилийн турш Монгол Улсын Ерөнхийлөгчийн хамгаалалтын албанд ажилласан...
+                            </p>
+                            <p class="text-lg mb-6">
+                                2024 оны 7-р сарын 7-нд Дунгүг их сургуулийн профессор Хо Ог-тай хамтын ажиллагааны санамж бичиг байгуулсан...
+                            </p>
+                        </div>
+                        
+                        <!-- Full Text (hidden by default) -->
+                        <div id="history-full" class="text-gray-800 leading-relaxed hidden">
+                            <p class="text-lg mb-4">
+                                1990 онд 1,537 байсан хүүхдийн зам тээврийн ослын нас баралтын тоог 2024 онд 12 болгож бууруулсан БНСУ-ын хүүхдийн зам тээврийн ослыг бууруулах арга туршлагыг Монгол Улсад идэвхтэй нэвтрүүлэх болно.
+                            </p>
+                            <p class="text-lg mb-4">
+                                1990 оноос хойш өнөөг хүртэл хүүхдийн замын хөдөлгөөний аюулгүй байдлын чиглэлээр төрийн бус байгууллагын үйл ажиллагаа явуулж буй замын хөдөлгөөний аюулгүй байдлын эксперт, Дунгүг их сургуулийн профессор Хо Ог нь 7-р сарын 7-нд Монгол Улсад айлчилж, Олон Улсын хурлын төвийн 3-р давхарт Монголын хүүхдийн замын хөдөлгөөний аюулгүй байдлын төрийн бус байгууллага болох "Грийн Лайт" ТББ-тай хамтын ажиллагааны санамж бичиг байгуулан, "Монгол–БНСУ-ын хүүхдийн зам тээврийн аюулгүй байдлын хэлэлцүүлэг"-ийг зохион байгууллаа.
+                            </p>
+                            <p class="text-lg mb-4">
+                                "Грийн Лайт" ТББ-ын тэргүүн Амурутүвшин нь цагдаагийн байгууллагад ажиллаж байсан туршлагатай бөгөөд 10 жилийн турш Монгол Улсын Ерөнхийлөгчийн хамгаалалтын албанд ажилласан. Тэрбээр Монгол дахь хүүхдийн зам тээврийн ослын ноцтой байдалд гүнээ санаа зовнин, 2024 оны 1-р сард хүүхдийн зам тээврийн аюулгүй байдлын чиглэлээр үйл ажиллагаа явуулах төрийн бус байгууллага байгуулан идэвхтэй ажиллаж байна.
+                            </p>
+                            <p class="text-lg mb-4">
+                                Хамтын ажиллагааны гэрээ байгуулсны дараа профессор Хо Ог нь Монгол Улсын Их Хурлыг зорьж, хүүхдийн асуудлыг хариуцдаг Нийгмийн бодлогын байнгын хорооны дарга Утайнхүүнасан гишүүнтэй уулзан, БНСУ-ын хүүхдийн зам тээврийн ослыг бууруулах арга туршлагыг Монгол Улсад нэвтрүүлэх боломжийн талаар хэлэлцсэн байна.
+                            </p>
+                            <p class="text-lg mb-4">
+                                Лутаа Энхнасан гишүүн "Монгол Улсад хүүхдийн зам тээврийн осол ноцтой хэмжээнд хүрснийг ухамсарлаж байна" хэмээгээд "цаашид хүүхдийн замын хөдөлгөөний аюулгүй байдлын боловсролыг заавал эзэмших тогтолцоо бий болгох, сургуулийн бүсийн хамгаалалтын байгууламжуудыг суурилуулах зэрэг асуудлыг тусгасан Хүүхдийн аюулгүй байдлын тухай хуулийг яаралтай батлуулахын төлөө ажиллана" гэдгээ илэрхийлэв.
+                            </p>
+                            <p class="text-lg mb-4">
+                                Мөн профессор Хо Ог нь Монгол Улсын хамгийн том үндэсний баяр болох Наадам наадмын бэлтгэл сургуулилтын талбайд зочлон, 4 ба түүнээс дээш хүүхэдтэй ээжүүдийн холбооны удирдах албан тушаалтнуудтай уулзаж, хүүхдийн зам тээврийн ослоос урьдчилан сэргийлэхэд ээжүүдийн гүйцэтгэх үүргийн талаар тайлбарлан, "Грийн Лайт" төрийн бус байгууллагатай хамтран Монголын хүүхдийн ослоос урьдчилан сэргийлэх ажилд идэвхтэй оролцохыг уриалсан байна.
+                            </p>
+                            <p class="text-lg mb-4">
+                                Үүнээс гадна, профессор Хо Ог нь Монгол Улсын замын хөдөлгөөний аюулгүй байдлыг хариуцдаг Зам тээврийн хөгжлийн яамны төрийн нарийн бичгийн дарга Батболдтай уулзаж, Монголын хүүхдийн зам тээврийн аюулгүй байдлын бодлогын талаар мэдээлэл сонсож, БНСУ-ын хүүхдийн зам тээврийн ослыг бууруулсан арга туршлагыг Монголд нэвтрүүлэх боломжийн талаар санал солилцлоо.
+                            </p>
+                            <p class="text-lg mb-6">
+                                Үүний дараа тэрээр Наадам наадмыг зохион байгуулах ажлыг ерөнхийд нь удирдаж буй Үндэсний урлагийн их театрын найруулагч эрхэм Түншинхүү даргатай уулзаж, хүүхдийн зам тээврийн ослыг бууруулахад соёл, урлагийн салбарынхны идэвхтэй оролцоог хүссэн байна.
+                            </p>
+                        </div>
+                        
+                        <!-- Read More/Less Button -->
+                        <button id="read-more-btn" class="text-purple-600 font-semibold hover:text-purple-700 transition duration-300 flex items-center">
+                            <span id="btn-text">Дэлгэрэнгүй унших</span>
+                            <i id="btn-icon" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Image Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Image 1 -->
+                    <div class="col-span-2">
+                        <img src="image1.jpeg" alt="Company History Image 1" class="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    </div>
+                    
+                    <!-- Image 2 -->
+                    <div>
+                        <img src="image2.jpeg" alt="Company History Image 2" class="w-full h-32 object-cover rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    </div>
+                    
+                    <!-- Image 3 -->
+                    <div>
+                        <img src="image3.jpeg" alt="Company History Image 3" class="w-full h-32 object-cover rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    </div>
+                    
+                    <!-- Image 4 -->
+                    <div>
+                        <img src="image4.jpeg" alt="Company History Image 4" class="w-full h-32 object-cover rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    </div>
+                    
+                    <!-- Image 5 -->
+                    <div>
+                        <img src="image5.jpeg" alt="Company History Image 5" class="w-full h-32 object-cover rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Results Summary -->
+      <div class="text-center mx-16 my-16">
+        <div class="bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl p-8 text-white">
+            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-trophy text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">
+                Бодит үр дүнг хамтдаа хүрэх
+            </h3>
+            <p class="text-lg mb-6 text-purple-100">
+                Эдгээр үр дүнгүүдийг хэрэгжүүлэхэд таны дэмжлэг чухал. Хүүхдийн аюулгүй байдлыг хамгаалах ажилд оролцож, ирээдүйн ертөнцийг бүтээцгээе
+            </p>
+            <button class="">
+        
+                <a href="https://www.facebook.com/suvdantitem?rdid=qRAojBAs5KTaXPqi&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18TgzCLUbT%2F#" target="_blank" rel="noopener" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    Бидэнтэй холбогдох
+                </a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+ 
+    <!-- Team Section -->
+<section class="bg-green-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Манай баг</h2>
+      <p class="text-lg text-gray-600">"Грийн Лайт" ТББ-ын удирдлага, гишүүд</p>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <!-- Team Member Cards -->
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Тэргүүн</h3>
+        <p class="text-green-800 font-bold">Загдсүрэн Амартүвшин</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-user"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Дэд тэргүүн</h3>
+        <p class="text-green-800 font-bold">Жавжмаа Ариунжаргал</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-calculator"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Нягтлан бодогч</h3>
+        <p class="text-green-800 font-bold">Батчулуун Болормаа</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-female"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Ээж нарын тэргүүн</h3>
+        <p class="text-green-800 font-bold">Цэвээрэгзин Мөнхнавч</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-male"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Аав нарын тэргүүн</h3>
+        <p class="text-green-800 font-bold">Хайдав Бадар-Ууган</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Мэдээллийн алба</h3>
+        <p class="text-green-800 font-bold">Цолмон Сэлэнгэ</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Гадаад харилцааны ажилтан</h3>
+        <p class="text-green-800 font-bold">Ганбаатар Төгөлдөр</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+        <div class="w-14 h-14 bg-green-700 text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Бүс, аймаг, хот хариуцсан мэргэжилтэн</h3>
+        <p class="text-green-800 font-bold">Чимэдбалдир Оюунчимэг</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="logo.jpeg" alt="Green Light Logo" class="h-16 w-auto mb-4 border-2 border-white rounded-lg">
+                    <p class="text-gray-400 mb-4 w-1/2 text-center md:text-left">
+                        Хүүхдийн аюулгүй байдлыг хамгаалах, ирээдүйн ертөнцийг бүтээх
+                    </p>
+                </div>
+                <div class="flex-1 flex flex-col items-center md:items-end gap-4">
+                    <div class="flex  items-center gap-2 text-gray-300">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Улаанбаатар хот Хан-Уул дүүрэг Арцадын ам Хүлэг Ресдэнс төв байр 2 давхарт 201 тоот</span>
+                        
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>KR: 82-10-8410-2147</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-300">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>MN: 976-9980-5356</span>
+                </div>
+                    <div class="flex items-center gap-2 mt-2">
+                        <a href="https://www.facebook.com/suvdantitem?rdid=qRAojBAs5KTaXPqi&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18TgzCLUbT%2F#" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-500 text-2xl">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <span class="text-gray-300 text-sm">Facebook хуудас</span>
+                </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Грийн Лайт ТББ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
